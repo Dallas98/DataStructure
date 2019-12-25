@@ -8,7 +8,7 @@ import LinearList.DataElement;
  * @author: Dallas
  * @create: 2019-12-24 15:33
  */
-public abstract class LinkList {
+public abstract class LinkList implements List{
 
     protected class LinkListNode { //链表节点类
         DataElement info;
@@ -48,7 +48,7 @@ public abstract class LinkList {
         }
     }
 
-    public int lemgth(){
+    public int length(){
         return count;
     }
 
@@ -87,6 +87,26 @@ public abstract class LinkList {
         count++;
     }
 
+    public void insert(DataElement element,int i){
+        LinkListNode node=new LinkListNode();
+        node.info=element;
+        LinkListNode p=first;
+        int n=1;
+        if(i==1){
+            node.link=first;
+            first=node;
+            count++;
+        }
+        else{
+            while (n<i-1){
+                p=p.link;
+            }
+            node.link=p.link;
+            p.link=node;
+            count++;
+        }
+    }
+
     private void copy(LinkList otherList){//拷贝链表，尾插入法
         LinkListNode newNode;
         LinkListNode current;
@@ -123,7 +143,5 @@ public abstract class LinkList {
     public abstract void deleteNode(DataElement deleteItem);
 
     public abstract boolean search(DataElement search);
-
-
 
 }
