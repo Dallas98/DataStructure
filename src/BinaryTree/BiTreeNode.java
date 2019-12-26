@@ -17,7 +17,7 @@ public class BiTreeNode {
         rChild = null;
     }
 
-    BiTreeNode(BiTreeNode lChild, BiTreeNode rChild, DataElement info) {
+    BiTreeNode(DataElement info,BiTreeNode lChild, BiTreeNode rChild) {
         this.info = info;
         this.lChild = lChild;
         this.rChild = rChild;

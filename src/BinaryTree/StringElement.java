@@ -6,7 +6,7 @@ package BinaryTree;
  * @author: Dallas
  * @create: 2019-12-25 21:35
  */
-public class StringElement extends DataElement{
+public class StringElement extends DataElement {
     protected String str;
 
     public StringElement() {
@@ -21,29 +21,33 @@ public class StringElement extends DataElement{
         str = stringElement.str;
     }
 
-    public void setString(String s){
-        str=s;
+    public void setString(String s) {
+        str = s;
     }
 
 
     @Override
     public boolean equals(DataElement element) {
-        return false;
+        StringElement temp = (StringElement) element;
+        return (str.compareTo(temp.str) == 0);
     }
 
     @Override
     public int compareTo(DataElement element) {
-        return 0;
+        StringElement temp = (StringElement) element;
+        return (str.compareTo(temp.str));
     }
 
     @Override
     public void makeCopy(DataElement element) {
-
+        StringElement temp = (StringElement) element;
+        str = new String(temp.str);
     }
 
     @Override
     public DataElement getCopy() {
-        return null;
+        StringElement temp = new StringElement();
+        return temp;
     }
 
     @Override

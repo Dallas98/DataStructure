@@ -9,6 +9,7 @@ import java.util.ArrayList;
  * @create: 2019-12-25 18:48
  */
 public abstract class DataElement {
+    int num;
     public abstract boolean equals(DataElement element);
 
     public abstract int compareTo(DataElement element);
