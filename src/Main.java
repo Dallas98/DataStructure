@@ -1,4 +1,5 @@
-import LinearList.SeqList.SeqList;
+import BinaryTree.BinaryTree;
+
 
 /**
  * @program: DataStructure
@@ -8,18 +9,20 @@ import LinearList.SeqList.SeqList;
  */
 public class Main {
     public static void main(String[] args) {
-        Object a[]={2,5,1,9,10,99,7};
-        SeqList seqList=new SeqList(a,7,10);
+//        DataElement []e=new StringElement[10];
+//        //{"a",null,"b","c","d",null,"e"}
+//
+//        BiTree biTree=new BiTree();
+//        biTree.creatTree(e);
 
-//        System.out.println(seqList.elems[2]);
-//        seqList.Traverse();
-        Object e=0;
-        seqList.Traverse();
-        seqList.InsertElem(3,3);
-        seqList.Traverse();
-        seqList.SetElem(1,8);
-        seqList.DeleteElem(1);
-        seqList.Traverse();
-        System.out.println(seqList.GetLength());
+        BinaryTree<Integer> binaryTree=new BinaryTree<Integer>();
+        Integer e[]={11,2,4,51,null,10,12,21,13,14,15,null,16};
+        binaryTree.root=binaryTree.creatTree(e);
+        binaryTree.preOrder();
+        binaryTree.inOrder();
+        binaryTree.postOrder();
+        binaryTree.levelOrder();
+        ;
+        System.out.println(binaryTree.Judge_BST());
     }
 }
